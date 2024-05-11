@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: #000000;
+  background-image: url('https://www.transparenttextures.com/patterns/bo-play.png');
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.img_header {
+  display: flex;
+  width: 150px;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 10px 10px 93px -7px rgba(26, 18, 255, 1);
+}
+main {
+  margin: 30px;
+  min-height: calc(100svh - 160px);
+}
+#hero {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin: 30px;
+  flex-wrap: wrap;
+}
+#hero > button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(255, 166, 0);
+  font-size: large;
+  width: 150px; /* Ancho del botón */
+  height: 60px;
+  border: none;
+  color: rgb(0, 0, 0);
+  box-shadow: 10px 10px 93px -7px rgba(26, 18, 255, 1);
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.container > h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: rgb(255, 185, 185);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(185, 193, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  cursor: pointer;
+  border: solid white;
+  box-shadow: 10px 10px 93px -7px rgba(26, 18, 255, 1);
+}
+
+.contenedor_x,
+.contenedor_o {
+  display: flex;
+  margin: 10px;
+}
+
+#restart,
+#playerX,
+#playerO {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #32af36;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#winsO {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: yellowgreen;
+}
+
+#winsX {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: yellowgreen;
+}
+.container-memoria {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#game {
+  max-height: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#stats {
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  width: calc(100% - 2rem);
+  font-size: 3rem;
+}
+
+.card {
+  width: 300px;
+  height: 200px;
+  margin: 1rem;
+  position: relative;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.card.active {
+  transform: rotateY(180deg);
+}
+
+.card div {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
+.card .face {
+  background: #05d1fe;
+  transform: rotateY(180deg);
+  color: black;
+  font-size: 6rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.card .back {
+  border: 3px solid #05d1fe;
+  background-color: #000942;
+  background-image: url('https://img.freepik.com/fotos-premium/efecto-linea-unica-color-neon-fondo-negro_48159-2968.jpg')
+    center / contain no-repeat;
+}
+
+.oculto {
+  display: none;
+}
+
+.contenedor-full {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-adivina {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 350px; /* Ancho deseado */
+  height: 300px;
+  gap: 10px;
+  background-color: antiquewhite;
+  border-radius: 5px;
+  flex-wrap: wrap;
+}
+
+.container-adivina > h1,
+p {
+  color: black;
+}
+
+.p-adivina {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container-adivina > input {
+  font-size: large;
+}
+
+.container-adivina button {
+  padding: 5px 10px;
+  font-size: 13px;
+  background-color: #32af36;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.selected {
+  background-color: rgb(
+    145,
+    145,
+    0
+  ); /* Estilo diferente para el botón seleccionado */
+}
+
+footer {
+  background-color: rgb(255, 166, 0);
+  bottom: 0;
+  height: 60px;
+  bottom: 0;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+footer > p {
+  color: black;
+}
+
+@media only screen and (max-width: 1050px) {
+}
+@media only screen and (max-width: 860px) {
+  .contenedor_x,
+  .contenedor_o {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.card {
+  width: 150px;
+  height: 180px;
+  margin: 1rem;
+  position: relative;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+@media only screen and (max-width: 650px) {
+  #hero {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 30px;
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 60px;
+    height: 80px;
+    margin: 1rem;
+    position: relative;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+  }
+  .card .face {
+    background: #05d1fe;
+    transform: rotateY(180deg);
+    color: black;
+    font-size: 4rem;
+  }
+}
