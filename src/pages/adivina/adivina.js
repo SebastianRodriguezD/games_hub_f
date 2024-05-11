@@ -23,7 +23,7 @@ export function adivina() {
   containerAdivina.appendChild(numberText) // Agregamos este elemento
 
   const inputGuess = document.createElement('input')
-  inputGuess.setAttribute('type', 'text')
+  inputGuess.setAttribute('type', 'number')
   inputGuess.setAttribute('id', 'guessField')
   inputGuess.setAttribute('placeholder', 'Introduce número aquí')
   containerAdivina.appendChild(inputGuess)
